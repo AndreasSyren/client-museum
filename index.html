@@ -1,0 +1,55 @@
+<html>
+<head>
+
+  <script type="text/javascript">
+
+    var rooms = [
+    				{roomName:"Scenen", description:"Text about stage...", roomSound: 'blah.mp3', roomId: 1},
+    				{roomName:"Logen", description:"Text about loge...", roomSound: 'blah.mp3', roomId: 2},
+    				{roomName:"Another", description:"Text about another...", roomSound: 'blah.mp3', roomId: 3},
+    				{roomName:"Rekvisita", description:"Text about another...", roomSound: 'blah.mp3', roomId: 4}
+    				]
+
+    var serial;
+  
+    function setup()
+    {
+      serial = (document.getElementById("seriality")).Seriality();
+      serial.begin('/dev/cu.usbmodemFD121', 9600);
+      serial.write('-');
+    }
+	function myAdd() {
+		for (i = 0; i < rooms.length; i++) { 
+			var node = document.createElement("LI");
+	    	node.className = "textList";
+	    	var headlinenode = document.createTextNode(rooms[i].roomName);
+	    	var textnode = document.createTextNode(rooms[i].description);
+	    	var theRoom = headlinenode;
+	    	node.appendChild(theRoom);
+	    	document.getElementById("myList").appendChild(node);
+
+			}
+	    
+	    
+	}
+	function myRemove() {
+		var myNode = document.getElementById("myList");
+		while (myNode.firstChild) {
+    	myNode.removeChild(myNode.firstChild);
+	}
+	}
+  </script>
+
+</head>
+<body onload="setup();">
+  <object type="application/Seriality" id="seriality" width="0" height="0"></object>
+  <form>
+    ON <input type="radio" name="led" value="on" onclick="serial.write('!'); myAdd();"><br/>
+    OFF <input type="radio" name="led" value="off" onclick="serial.write('-'); myRemove();" checked="checked">
+  </form>
+	<ul id="myList">
+ 
+	</ul>
+</body>
+</html>
+
