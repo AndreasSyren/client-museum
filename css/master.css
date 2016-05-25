@@ -1,0 +1,17 @@
+.border {
+  border: dotted 1px #000;
+}
+.expanded {
+  padding: 6rem;
+  margin: 3rem;
+}
+.scenen {
+  color: #FFF;
+  height: 80vh;
+  background: #FF0;
+  background-image: url(/assets/images/red_chairs_scenen.jpg);
+  background-size: cover;
+}
+.scenen h1 {
+  text-transform: capitalize;
+}
