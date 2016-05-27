@@ -49,40 +49,74 @@
   <source src="assets/sound/applause.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
-  <div class="large-10 columns border">
+  <div class="large-10 columns">
     <h1>Malmö Opera</h1>
     <div class="large-6 columns border">
-      <p><a class="button expanded" data-open="exampleModal1">Loge</a></p>
+      <p><a class="button expanded" data-open="exampleModal1" onclick="serial.write('2');">Loge</a></p>
       <div class="large reveal" id="exampleModal1" data-reveal>
         <h1>Loge</h1>
         <p class="lead">Make things happen</p>
-
+        <!--form>
+          ON <input type="radio" name="led" value="on" onclick="serial.write('2'); myAdd();"><br/>
+          OFF <input type="radio" name="led" value="off" onclick="serial.write('-'); myRemove();" checked="checked">
+        </form-->
         <p><ul id="myList loge"></ul></p>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
+        <button class="close-button" data-close aria-label="Close modal" type="button" onclick="serial.write('-');">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form>
-        ON <input type="radio" name="led" value="on" onclick="serial.write('!'); myAdd();"><br/>
-        OFF <input type="radio" name="led" value="off" onclick="serial.write('-'); myRemove();" checked="checked">
-      </form>
+
     </div>
     <div class="large-6 columns border">
-      <p><a class="button expanded warning" data-open="exampleModal2">Scenen</a></p>
+      <p><a class="button expanded warning" data-open="exampleModal2" onclick="serial.write('3');">Scenen</a></p>
       <div class="large reveal scenen" id="exampleModal2" data-reveal>
         <h1>Scenen</h1>
         <button onclick="playAudio()" type="button">Play Audio</button>
         <button onclick="pauseAudio()" type="button">Pause Audio</button>
         <p class="lead">Make things happen</p>
+        <!--form>
+          ON <input type="radio" name="led2" value="on" onclick="serial.write('3'); myAdd();"><br/>
+          OFF <input type="radio" name="led2" value="off" onclick="serial.write('-'); myRemove();" checked="checked">
+        </form-->
         <p><ul id="myList loge"></ul></p>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
+        <button class="close-button" data-close aria-label="Close modal" type="button" onclick="serial.write('-');">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form>
-        ON <input type="radio" name="led2" value="on" onclick="serial.write('!'); myAdd();"><br/>
-        OFF <input type="radio" name="led2" value="off" onclick="serial.write('-'); myRemove();" checked="checked">
-      </form>
+
+    </div>
+    <div class="large-6 columns border">
+      <p><a class="button expanded" data-open="exampleModal1" onclick="serial.write('3');">Loge</a></p>
+      <div class="large reveal" id="exampleModal1" data-reveal>
+        <h1>Loge</h1>
+        <p class="lead">Make things happen</p>
+        <!--form>
+          ON <input type="radio" name="led" value="on" onclick="serial.write('2'); myAdd();"><br/>
+          OFF <input type="radio" name="led" value="off" onclick="serial.write('-'); myRemove();" checked="checked">
+        </form-->
+        <p><ul id="myList loge"></ul></p>
+        <button class="close-button" data-close aria-label="Close modal" type="button" onclick="serial.write('-');">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+    </div>
+    <div class="large-6 columns border">
+      <p><a class="button expanded warning" data-open="exampleModal3" onclick="serial.write('4');">Scenen</a></p>
+      <div class="large reveal scenen" id="exampleModal3" data-reveal>
+        <h1>Scenen snurrar</h1>
+        
+        <p class="lead">Make things happen</p>
+        <!--form>
+          ON <input type="radio" name="led2" value="on" onclick="serial.write('3'); myAdd();"><br/>
+          OFF <input type="radio" name="led2" value="off" onclick="serial.write('-'); myRemove();" checked="checked">
+        </form-->
+        <p><ul id="myList loge"></ul></p>
+        <button class="close-button" data-close aria-label="Close modal" type="button" onclick="serial.write('-');">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
     </div>
 
 
